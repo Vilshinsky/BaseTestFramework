@@ -1,5 +1,6 @@
 ﻿using System;
 using L0.WebDriver.Browser;
+using L0.WebDriver.Configuration;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
@@ -17,7 +18,7 @@ namespace L0.WebDriver.WebDriver
 		private static IWebDriver GetDriverType(string browserType)
 		{
 			IWebDriver driver;
-			var browser = browserType == "fromconfig" ? Configuration.Configuration.BrowserType : browserType;
+			var browser = browserType == "fromconfig" ? Configuration.Config.BrowserType : browserType;
 
 			switch (browser)
 			{
@@ -41,10 +42,10 @@ namespace L0.WebDriver.WebDriver
 				BrowserVersion = "84.0.4147.89",
 				PlatformName = "WINDOWS"
 			};
-			options.AddUserProfilePreference("download.default_directory", WebDriverConfiguration.DownloadsFolder);
+			options.AddUserProfilePreference("download.default_directory", Config.DownloadsFolder);
 			options.AddUserProfilePreference("prompt_for_download", false);
 			options.AddArgument("--start-maximized");
-			if (WebDriverConfiguration.IsHeadless)
+			if (Config.IsHeadless)
 				options.AddArgument("headless");
 
 			if (addArgument.Length > 0)
@@ -67,7 +68,7 @@ namespace L0.WebDriver.WebDriver
 			};
 
 			options.AddArgument("--start-maximized");
-			if (WebDriverConfiguration.IsHeadless)
+			if (Config.IsHeadless)
 				options.AddArgument("headless");
 
 			if (addArgument.Length > 0)

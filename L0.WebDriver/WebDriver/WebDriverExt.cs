@@ -1,4 +1,5 @@
 ﻿using System;
+using L0.WebDriver.Configuration;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -6,7 +7,7 @@ namespace L0.WebDriver.WebDriver
 {
 	public static class WebDriverExt
 	{
-		private static readonly int ImplicitlyWaitTimeMs = WebDriverConfiguration.ImplicitlyWaitMs;
+		private static readonly int ImplicitlyWaitTimeMs = Config.ImplicitlyWaitMs;
 
         public static bool IsElementPresent(this IWebDriver driver, By by)
         {

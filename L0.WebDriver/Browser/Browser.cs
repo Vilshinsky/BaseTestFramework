@@ -1,5 +1,6 @@
 ﻿using System;
 using L0.Helpers;
+using L0.WebDriver.Configuration;
 using L0.WebDriver.PageObject;
 using L0.WebDriver.WebDriver;
 using log4net;
@@ -51,7 +52,7 @@ namespace L0.WebDriver.Browser
 				throw;
 			}
 
-			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(WebDriverConfiguration.ImplicitlyWaitMs);
+			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(Config.ImplicitlyWaitMs);
 			driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromMilliseconds(30000);
 			driver.Manage().Window.Maximize();
 

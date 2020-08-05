@@ -4,7 +4,7 @@ namespace L0.WebDriver.PageObject
 {
 	public abstract class BasePage
 	{
-		protected L0.WebDriver.Browser.Browser Browser;
+		protected Browser.Browser Browser;
 
 		protected IWebDriver Driver;
 
