@@ -6,13 +6,10 @@ using OpenQA.Selenium;
 
 namespace L2.Tests
 {
-	[TestFixture("chrome")]
-	[TestFixture("firefox")]
+	[TestFixture]
 	[Parallelizable]
-	public class TestClass : TestSetUp
+	public class ParallelTests : TestSetUp
 	{
-		public TestClass(string browserType) : base(browserType) { }
-
 		[SetUp]
 		public void SetUp()
 		{
@@ -27,8 +24,10 @@ namespace L2.Tests
 
 			Browser.Driver.FindElement(By.Name("q")).SendKeys(insertText);
 			Log.Info($"Text {insertText} inserted into input.");
+
 			Thread.Sleep(2000);
 			Log.Info("Waited 2 seconds.");
+
 			Assert.That(Browser.Driver.FindElement(By.Name("q")).GetAttribute("value") == insertText);
 		}
 
@@ -39,8 +38,10 @@ namespace L2.Tests
 
 			Browser.Driver.FindElement(By.Name("q")).SendKeys(insertText);
 			Log.Info($"Text {insertText} inserted into input.");
+
 			Thread.Sleep(2000);
 			Log.Info("Waited 2 seconds.");
+
 			Assert.That(Browser.Driver.FindElement(By.Name("q")).GetAttribute("value") == insertText);
 		}
 	}

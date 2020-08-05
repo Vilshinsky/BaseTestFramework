@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L0.WebDriver", "BaseTestFramework\L0.WebDriver.csproj", "{C4107078-E761-445A-A00D-835894966981}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L1.Domain", "L1.Domain\L1.Domain.csproj", "{7EB9552C-4460-4331-9885-01C6BA570A12}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L0.Helpers", "L0.Helpers\L0.Helpers.csproj", "{EB810558-3CB8-42FC-9000-30A0D3932F7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2.Tests", "L2.Tests\L2.Tests.csproj", "{2F86A021-B789-4B4F-8FB4-D5F2FD0A5E13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L2.Tests", "L2.Tests\L2.Tests.csproj", "{2F86A021-B789-4B4F-8FB4-D5F2FD0A5E13}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L0.WebDriver", "L0.WebDriver\L0.WebDriver.csproj", "{D4118B19-4512-4D16-9D06-180034A0F2E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C4107078-E761-445A-A00D-835894966981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C4107078-E761-445A-A00D-835894966981}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C4107078-E761-445A-A00D-835894966981}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C4107078-E761-445A-A00D-835894966981}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7EB9552C-4460-4331-9885-01C6BA570A12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7EB9552C-4460-4331-9885-01C6BA570A12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EB9552C-4460-4331-9885-01C6BA570A12}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{2F86A021-B789-4B4F-8FB4-D5F2FD0A5E13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F86A021-B789-4B4F-8FB4-D5F2FD0A5E13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F86A021-B789-4B4F-8FB4-D5F2FD0A5E13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4118B19-4512-4D16-9D06-180034A0F2E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4118B19-4512-4D16-9D06-180034A0F2E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4118B19-4512-4D16-9D06-180034A0F2E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4118B19-4512-4D16-9D06-180034A0F2E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

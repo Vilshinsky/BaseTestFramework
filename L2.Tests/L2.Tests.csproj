@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\L0.WebDriver\L0.WebDriver.csproj" />
     <ProjectReference Include="..\L1.Domain\L1.Domain.csproj" />
   </ItemGroup>
 

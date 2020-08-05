@@ -24,7 +24,10 @@ namespace L1.Domain.NUnit
 			};
 		}
 
-		public TestSetUp() { }
+		public TestSetUp()
+		{
+			BrowserType = BrowserTypes.FromConfig;
+		}
 		
 		private bool IsTestFailed() => TestContext.CurrentContext.Result.Outcome.Equals(ResultState.Error) 
 		                               || TestContext.CurrentContext.Result.Outcome.Equals(ResultState.Failure);

@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BaseTestFramework\L0.WebDriver.csproj" />
+    <ProjectReference Include="..\L0.WebDriver\L0.WebDriver.csproj" />
     <Content Include="appsettings.test.json">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
