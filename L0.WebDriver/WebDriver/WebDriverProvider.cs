@@ -53,7 +53,7 @@ namespace L0.WebDriver.WebDriver
 					options.AddArgument(argument);
 
 			var remoteSettings = new RemoteSessionSettings(options);
-			var uri = new Uri("http://localhost:4444/wd/hub");
+			var uri = new Uri(Config.RemoteWebDriverAddress);
 			var drv = new RemoteWebDriver(uri, remoteSettings) { FileDetector = new LocalFileDetector() };
 
 			return drv;
@@ -76,7 +76,7 @@ namespace L0.WebDriver.WebDriver
 					options.AddArgument(argument);
 
 			var remoteSettings = new RemoteSessionSettings(options);
-			var uri = new Uri("http://localhost:4444/wd/hub");
+			var uri = new Uri(Config.RemoteWebDriverAddress);
 			var drv = new RemoteWebDriver(uri, remoteSettings) { FileDetector = new LocalFileDetector() };
 
 			return drv;

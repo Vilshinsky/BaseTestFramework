@@ -90,6 +90,7 @@ namespace L0.WebDriver.Browser
 			try
 			{
 				Driver.Navigate().GoToUrl(url);
+				Log.Info($"OpenPage: {url}");
 			}
 			catch (Exception ex)
 			{
@@ -101,7 +102,7 @@ namespace L0.WebDriver.Browser
 		{
 			var page = new T();
 
-			Log.Debug("OpenPage: " + page.PageUrl);
+			Log.Debug($"OpenPage: {page.PageUrl}");
 			OpenPage(page.PageUrl);
 			if (waitPage)
 			{

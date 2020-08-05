@@ -13,6 +13,7 @@ namespace L0.WebDriver.Configuration
 		public static bool IsHeadless => bool.Parse(_config["isHeadless"]);
 
 		public static string DownloadsFolder => _config["downloadsFolder"];
+		public static string RemoteWebDriverAddress => _config["remoteWebDriverAddress"];
 
 		private static IConfiguration InitConfiguration()
 		{

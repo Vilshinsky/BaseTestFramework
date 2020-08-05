@@ -14,7 +14,7 @@ namespace L2.Tests
 		public void SetUp()
 		{
 			Browser.OpenPage("http://www.google.com");
-			Log.Info("Navigated to URL.");
+			
 		}
 
 		[Test]
