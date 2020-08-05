@@ -18,7 +18,7 @@ namespace L0.WebDriver.WebDriver
 		private static IWebDriver GetDriverType(string browserType)
 		{
 			IWebDriver driver;
-			var browser = browserType == "fromconfig" ? Configuration.Config.BrowserType : browserType;
+			var browser = browserType == "fromconfig" ? Config.BrowserType : browserType;
 
 			switch (browser)
 			{
