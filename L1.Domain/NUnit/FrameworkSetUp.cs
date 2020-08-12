@@ -1,5 +1,5 @@
-﻿using L0.Helpers;
-using L1.Domain.Configuration;
+﻿using L1.Domain.Configuration;
+using L1.Domain.Logs;
 using NUnit.Framework;
 
 namespace L1.Domain.NUnit

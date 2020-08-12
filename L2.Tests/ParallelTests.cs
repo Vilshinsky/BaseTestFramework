@@ -1,8 +1,8 @@
 ﻿using System.Threading;
-using L0.Helpers;
+using L1.Domain.Logs;
 using L1.Domain.NUnit;
+using L1.Domain.PageObject;
 using NUnit.Framework;
-using OpenQA.Selenium;
 
 namespace L2.Tests
 {
@@ -10,11 +10,12 @@ namespace L2.Tests
 	[Parallelizable]
 	public class ParallelTests : TestSetUp
 	{
+		protected GoogleSearchPage GoogleSearchPage;
+
 		[SetUp]
 		public void SetUp()
 		{
-			Browser.OpenPage("http://www.google.com");
-			
+			GoogleSearchPage = Browser.OpenPage<GoogleSearchPage>();
 		}
 
 		[Test]
@@ -22,13 +23,13 @@ namespace L2.Tests
 		{
 			var insertText = "Test0";
 
-			Browser.Driver.FindElement(By.Name("q")).SendKeys(insertText);
+			GoogleSearchPage.SearchInput = insertText;
 			Log.Info($"Text {insertText} inserted into input.");
 
 			Thread.Sleep(2000);
 			Log.Info("Waited 2 seconds.");
 
-			Assert.That(Browser.Driver.FindElement(By.Name("q")).GetAttribute("value") == insertText);
+			Assert.That(GoogleSearchPage.SearchInput == insertText);
 		}
 
 		[Test]
@@ -36,13 +37,13 @@ namespace L2.Tests
 		{
 			var insertText = "Test1";
 
-			Browser.Driver.FindElement(By.Name("q")).SendKeys(insertText);
+			GoogleSearchPage.SearchInput = insertText;
 			Log.Info($"Text {insertText} inserted into input.");
 
 			Thread.Sleep(2000);
 			Log.Info("Waited 2 seconds.");
 
-			Assert.That(Browser.Driver.FindElement(By.Name("q")).GetAttribute("value") == insertText);
+			Assert.That(GoogleSearchPage.SearchInput == insertText);
 		}
 	}
 }

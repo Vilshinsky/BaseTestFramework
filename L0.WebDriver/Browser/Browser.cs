@@ -1,5 +1,4 @@
 ﻿using System;
-using L0.Helpers;
 using L0.WebDriver.Configuration;
 using L0.WebDriver.PageObject;
 using L0.WebDriver.WebDriver;
@@ -34,7 +33,7 @@ namespace L0.WebDriver.Browser
 		public BrowserAlert Alert => new BrowserAlert(this);
 		public BrowserScreenShot ScreenShot => new BrowserScreenShot(Driver, HandleWebDriverException);
 		public JsExecutor JsExecutor => new JsExecutor(Driver);
-		public BrowserWait Wait => new BrowserWait(this);
+		public BrowserWait Wait => new BrowserWait(this, _log);
 
 		public Action<IWebDriver> WaitTemplateMethod { get; set; }
 
@@ -48,7 +47,7 @@ namespace L0.WebDriver.Browser
 			}
 			catch (Exception ex)
 			{
-				Log.Error("", ex);
+				_log.Error("", ex);
 				throw;
 			}
 
@@ -71,18 +70,18 @@ namespace L0.WebDriver.Browser
 			}
 			catch (Exception ex)
 			{
-				Log.Error("Close: ", ex);
+				_log.Error("Close: ", ex);
 			}
 		}
 
 		public void Restart()
 		{
-			Log.Info("Restart: Restarting browser");
+			_log.Info("Restart: Restarting browser");
 
 			Close();
 			Driver = GetDriver(_browserType);
 
-			Log.Info("Restart: done");
+			_log.Info("Restart: done");
 		}
 
 		public void OpenPage(string url)
@@ -90,7 +89,7 @@ namespace L0.WebDriver.Browser
 			try
 			{
 				Driver.Navigate().GoToUrl(url);
-				Log.Info($"OpenPage: {url}");
+				_log.Info($"OpenPage: {url}");
 			}
 			catch (Exception ex)
 			{
@@ -102,16 +101,16 @@ namespace L0.WebDriver.Browser
 		{
 			var page = new T();
 
-			Log.Debug($"OpenPage: {page.PageUrl}");
+			_log.Debug($"OpenPage: {page.PageUrl}");
 			OpenPage(page.PageUrl);
 			if (waitPage)
 			{
-				Log.Debug("OpenPage: waiting page starting");
-				Wait.UntilPageReady();
+				_log.Debug("OpenPage: waiting page starting");
+				//Wait.UntilPageReady();
 				page.WaitUntilPageLoaded();
 			}
 
-			Log.Debug("OpenPage: done");
+			_log.Debug("OpenPage: done");
 
 			return page;
 		}
@@ -119,14 +118,14 @@ namespace L0.WebDriver.Browser
 		private void HandleWebDriverException(Exception ex)
 		{
 			//if session was timed out we need to start new browser in order to not fail whole session
-			Log.Error("", ex);
+			_log.Error("", ex);
 			if (ex is InvalidOperationException || ex is WebDriverException)
 			{
-				Log.Debug("HandleWebDriverException: starting new driver");
+				_log.Debug("HandleWebDriverException: starting new driver");
 				Restart();
-				Log.Debug("HandleWebDriverException: starting new driver - done");
+				_log.Debug("HandleWebDriverException: starting new driver - done");
 			}
-			Log.Debug("HandleWebDriverException: Throwing exception to fail test.");
+			_log.Debug("HandleWebDriverException: Throwing exception to fail test.");
 			throw new Exception("HandleWebDriverException: done. Please see inner exception for details.", ex);
 		}
 	}

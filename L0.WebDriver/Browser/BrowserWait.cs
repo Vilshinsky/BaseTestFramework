@@ -1,5 +1,5 @@
 ﻿using System;
-using L0.Helpers;
+using log4net;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -9,11 +9,13 @@ namespace L0.WebDriver.Browser
 	{
 		private readonly Browser _browser;
 		private readonly IWebDriver _driver;
+		private readonly ILog _log;
 
-        public BrowserWait(Browser browser)
+        public BrowserWait(Browser browser, ILog log)
         {
 	        _browser = browser;
 	        _driver = _browser.Driver;
+	        _log = log;
         }
 
         /// <summary>
@@ -30,7 +32,7 @@ namespace L0.WebDriver.Browser
             }
 	        catch (Exception e)
 	        {
-		        Log.Error("UntilDocumentReadyStateComplete: ", e);
+		        _log.Error("UntilDocumentReadyStateComplete: ", e);
             }
         }
 
@@ -43,7 +45,7 @@ namespace L0.WebDriver.Browser
 	        }
 	        catch (Exception ex)
 	        {
-		        Log.Error("UntilAjaxInactive: ", ex);
+		        _log.Error("UntilAjaxInactive: ", ex);
 	        }
         }
 
@@ -69,7 +71,7 @@ namespace L0.WebDriver.Browser
             }
             catch (Exception ex)
             {
-	            Log.Error("ForAjax: ", ex);
+	            _log.Error("ForAjax: ", ex);
             }
         }
     }

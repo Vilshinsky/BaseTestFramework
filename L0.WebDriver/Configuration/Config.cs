@@ -14,6 +14,7 @@ namespace L0.WebDriver.Configuration
 
 		public static string DownloadsFolder => _config["downloadsFolder"];
 		public static string RemoteWebDriverAddress => _config["remoteWebDriverAddress"];
+		public static string ScreenshotFolder => _config["screenshotFolder"];
 
 		private static IConfiguration InitConfiguration()
 		{
