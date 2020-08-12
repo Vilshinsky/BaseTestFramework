@@ -20,7 +20,6 @@ namespace L2.Tests
 		{
 			GoogleSearchPage = new GoogleSearchPage(Browser);
 			Browser.OpenPage(GoogleSearchPage.PageUrl);
-			Log.Info("Navigated to URL.");
 		}
 
 		[Test]
