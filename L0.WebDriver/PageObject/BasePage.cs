@@ -1,10 +1,11 @@
-﻿using OpenQA.Selenium;
+﻿using L0.WebDriver.BrowserEngine;
+using OpenQA.Selenium;
 
 namespace L0.WebDriver.PageObject
 {
 	public abstract class BasePage
 	{
-		protected Browser.Browser Browser;
+		protected Browser Browser;
 
 		protected IWebDriver Driver;
 

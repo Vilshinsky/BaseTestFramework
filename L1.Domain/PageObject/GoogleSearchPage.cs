@@ -1,4 +1,4 @@
-﻿using L0.WebDriver.Browser;
+﻿using L0.WebDriver.BrowserEngine;
 using OpenQA.Selenium;
 
 namespace L1.Domain.PageObject

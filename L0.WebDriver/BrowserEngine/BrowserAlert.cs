@@ -2,7 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace L0.WebDriver.Browser
+namespace L0.WebDriver.BrowserEngine
 {
 	public class BrowserAlert
 	{

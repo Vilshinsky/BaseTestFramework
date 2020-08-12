@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace L0.WebDriver.Browser
+namespace L0.WebDriver.BrowserEngine
 {
 	public class JsExecutor
 	{

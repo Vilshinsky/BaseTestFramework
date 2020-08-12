@@ -1,7 +1,7 @@
 ﻿using System;
 using L0.WebDriver.Configuration;
 
-namespace L0.WebDriver.Browser
+namespace L0.WebDriver.BrowserEngine
 {
 	public static class BrowserHelper
 	{

@@ -5,7 +5,7 @@ using L0.WebDriver.WebDriver;
 using log4net;
 using OpenQA.Selenium;
 
-namespace L0.WebDriver.Browser
+namespace L0.WebDriver.BrowserEngine
 {
 	public enum BrowserTypes
 	{

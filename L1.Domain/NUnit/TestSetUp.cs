@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using L0.WebDriver.Browser;
+using L0.WebDriver.BrowserEngine;
 using L0.WebDriver.Configuration;
 using L1.Domain.CleanUp;
 using L1.Domain.Configuration;

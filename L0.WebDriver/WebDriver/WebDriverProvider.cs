@@ -1,5 +1,5 @@
 ﻿using System;
-using L0.WebDriver.Browser;
+using L0.WebDriver.BrowserEngine;
 using L0.WebDriver.Configuration;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;

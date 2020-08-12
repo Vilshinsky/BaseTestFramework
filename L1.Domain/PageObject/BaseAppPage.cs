@@ -1,5 +1,5 @@
 ﻿using System;
-using L0.WebDriver.Browser;
+using L0.WebDriver.BrowserEngine;
 using L0.WebDriver.Configuration;
 using L0.WebDriver.PageObject;
 using L1.Domain.Configuration;

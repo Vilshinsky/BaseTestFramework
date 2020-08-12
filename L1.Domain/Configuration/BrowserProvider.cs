@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
-using L0.WebDriver.Browser;
+using L0.WebDriver.BrowserEngine;
 using L0.WebDriver.Configuration;
 using log4net;
 using NUnit.Framework;
