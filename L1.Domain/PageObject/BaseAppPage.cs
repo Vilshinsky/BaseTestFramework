@@ -3,6 +3,7 @@ using L0.WebDriver.BrowserEngine;
 using L0.WebDriver.Configuration;
 using L0.WebDriver.PageObject;
 using L1.Domain.Configuration;
+using OpenQA.Selenium;
 
 namespace L1.Domain.PageObject
 {
@@ -15,15 +16,21 @@ namespace L1.Domain.PageObject
 			Driver = Browser.Driver;
 		}
 
-		protected BaseAppPage()
+		protected BaseAppPage() : this(DefaultBrowser)
 		{
-			var browserType = BrowserHelper.EvaluateType(Config.BrowserType);
-
-			Browser = BrowserProvider.GetBrowser(browserType);
+			Browser = DefaultBrowser;
 			Driver = Browser.Driver;
 		}
 
+		private static Browser DefaultBrowser => BrowserProvider.GetBrowser(BrowserHelper.EvaluateType(Config.BrowserType));
+		
 		public override string Title => Driver.Title;
 		public override string PageUrl { get; }
+
+		protected IWebElement ScrollIntoView(IWebElement element)
+		{
+			Browser.JsExecutor.ExecuteScript("arguments[0].scrollIntoView(true);", element);
+			return element;
+		}
 	}
 }

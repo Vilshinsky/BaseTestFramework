@@ -4,15 +4,17 @@ namespace L1.Domain.CleanUp
 {
 	public class CleanupQueue
 	{
-		private CleanupAction _head;
-		private CleanupAction _tail;
+		CleanupAction _head;
+		CleanupAction _tail;
 
-		private bool IsEmpty => _head == null;
+		public bool IsEmpty => _head == null;
 
 		public void Enqueue(Action value)
 		{
 			if (IsEmpty)
-				_tail = _head = new CleanupAction {Method = value, Next = null };
+			{
+				_tail = _head = new CleanupAction { Method = value, Next = null };
+			}
 			else
 			{
 				var item = new CleanupAction {Method = value, Next = null};
@@ -23,11 +25,11 @@ namespace L1.Domain.CleanUp
 
 		private void Dequeue()
 		{
-			if (_head == null) throw new InvalidOperationException();
+			if (_head == null) throw new InvalidOperationException("Can not dequeue from empty queue.");
 
 			_head = _head.Next;
-			if (_head == null)
-				_tail = null;
+
+			if (_head == null) _tail = null;
 		}
 
 		public void ExecuteQueue()

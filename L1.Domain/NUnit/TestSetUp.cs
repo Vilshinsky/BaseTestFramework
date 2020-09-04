@@ -37,9 +37,8 @@ namespace L1.Domain.NUnit
 	        Log.Info("BaseOneTimeSetUp: Test suite started: " + TestContext.CurrentContext.Test.ClassName);
 	        Log.Info("BaseOneTimeSetUp: Current url is " + (Browser.Driver != null ? Browser.Driver.Url : "null"));
 
-	        if (_currentScreenshotFolder == null)
-		        _currentScreenshotFolder = Path.Combine(Config.ScreenshotFolder,
-			        DateTime.Now.ToString("yyyy.MM.dd_HHmmss"));
+	        _currentScreenshotFolder ??= Path.Combine(Config.ScreenshotFolder,
+		        DateTime.Now.ToString("yyyy.MM.dd_HHmmss"));
 		}
 
         [SetUp]

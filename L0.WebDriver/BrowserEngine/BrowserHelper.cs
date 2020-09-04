@@ -1,5 +1,4 @@
 ﻿using System;
-using L0.WebDriver.Configuration;
 
 namespace L0.WebDriver.BrowserEngine
 {
@@ -7,11 +6,11 @@ namespace L0.WebDriver.BrowserEngine
 	{
 		public static BrowserTypes EvaluateType(string browserType)
 		{
-			var type = Config.BrowserType switch
+			var type = browserType switch
 			{
 				"chrome" => BrowserTypes.Chrome,
 				"firefox" => BrowserTypes.Firefox,
-				_ => throw new ArgumentException($"Not supported browser type requested: '{Config.BrowserType}'.")
+				_ => throw new ArgumentException($"Not supported browser type requested: '{browserType}'.")
 			};
 
 			return type;

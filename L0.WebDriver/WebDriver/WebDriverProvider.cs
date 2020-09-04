@@ -55,7 +55,7 @@ namespace L0.WebDriver.WebDriver
 			var remoteSettings = new RemoteSessionSettings(options);
 			var uri = new Uri(Config.RemoteWebDriverAddress);
 			var drv = new RemoteWebDriver(uri, remoteSettings) { FileDetector = new LocalFileDetector() };
-
+			
 			return drv;
 		}
 
